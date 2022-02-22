@@ -87,6 +87,9 @@ class Rabinkarp
             $hash += $ascii * $x;
         }
         return $hash;
+        var_dump($ascii);
+        var_dump($x);
+        var_dump($hash);
     }
 
 
