@@ -82,8 +82,9 @@ class Rabinkarp
         $pjgKarakter = strlen($string);
         $hash = 0;
         for ($i = 0; $i < $pjgKarakter; $i++) {
-            $ascii = ord($string[$i]);
-            $hash += $ascii * pow($basis, $pjgKarakter - ($i + 1));
+            $ascii = ord($string[$i]) . "<br>";
+            $x     = pow($basis, $pjgKarakter - ($i + 1));
+            $hash += $ascii * $x;
         }
         return number_format($hash);
     }
