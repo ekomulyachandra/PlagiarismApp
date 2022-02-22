@@ -17,9 +17,9 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $teks           = "ABCD";
-        $pre1           = $this->Rabinkarp->preprocess($teks);
-        $teks1Gram      = $this->Rabinkarp->kGram($pre1, 2);
-        $teks1Hash      = $this->Rabinkarp->hash($teks1Gram);
+        $pre1           = $this->rabinkarp->preprocess($teks);
+        $teks1Gram      = $this->rabinkarp->kGram($pre1, 2);
+        $teks1Hash      = $this->rabinkarp->hash($teks1Gram);
         $users     = $this->dashboard_model->countUser();
         $roleID    = $this->session->userdata['role_id'];
         if ($roleID == 1) {

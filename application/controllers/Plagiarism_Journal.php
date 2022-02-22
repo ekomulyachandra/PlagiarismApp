@@ -36,29 +36,29 @@ class Plagiarism_Journal extends CI_Controller
             $journal2        = $this->Plagiarism_journal_model->getDetailJournal($id_journal2);
             $journal3        = $this->Plagiarism_journal_model->getDetailJournal($id_journal3);
             //Proses pengolahan journal 1
-            $pre1           = $this->Rabinkarp->preprocess($journal1->content);
-            $teks1Gram      = $this->Rabinkarp->kGram($pre1, 5);
-            $teks1Hash      = $this->Rabinkarp->hash($teks1Gram);
+            $pre1           = $this->rabinkarp->preprocess($journal1->content);
+            $teks1Gram      = $this->rabinkarp->kGram($pre1, 5);
+            $teks1Hash      = $this->rabinkarp->hash($teks1Gram);
             //Proses pengecekkan dengan journal 2
-            $pre2           = $this->Rabinkarp->preprocess($journal2->content);
-            $teks2Gram      = $this->Rabinkarp->kGram($pre2, 5);
-            $teks2Hash      = $this->Rabinkarp->hash($teks2Gram);
-            $fingerprint    = $this->Rabinkarp->fingerprint($teks1Hash, $teks2Hash);
-            $unique         = $this->Rabinkarp->unique($fingerprint);
-            $hasiluniq      = $this->Rabinkarp->fingerprint($unique, $teks1Hash);
-            $similarity     = $this->Rabinkarp->similarityCoefficient(
+            $pre2           = $this->rabinkarp->preprocess($journal2->content);
+            $teks2Gram      = $this->rabinkarp->kGram($pre2, 5);
+            $teks2Hash      = $this->rabinkarp->hash($teks2Gram);
+            $fingerprint    = $this->rabinkarp->fingerprint($teks1Hash, $teks2Hash);
+            $unique         = $this->rabinkarp->unique($fingerprint);
+            $hasiluniq      = $this->rabinkarp->fingerprint($unique, $teks1Hash);
+            $similarity     = $this->rabinkarp->similarityCoefficient(
                 $hasiluniq,
                 $teks1Hash,
                 $teks2Hash
             );
             //Proses pengecekkan dengan journal 3
-            $pre3           = $this->Rabinkarp->preprocess($journal3->content);
-            $teks3Gram      = $this->Rabinkarp->kGram($pre3, 5);
-            $teks3Hash      = $this->Rabinkarp->hash($teks3Gram);
-            $fingerprint2   = $this->Rabinkarp->fingerprint($teks1Hash, $teks3Hash);
-            $unique2        = $this->Rabinkarp->unique($fingerprint2);
-            $hasiluniq2     = $this->Rabinkarp->fingerprint($unique2, $teks1Hash);
-            $similarity2    = $this->Rabinkarp->similarityCoefficient(
+            $pre3           = $this->rabinkarp->preprocess($journal3->content);
+            $teks3Gram      = $this->rabinkarp->kGram($pre3, 5);
+            $teks3Hash      = $this->rabinkarp->hash($teks3Gram);
+            $fingerprint2   = $this->rabinkarp->fingerprint($teks1Hash, $teks3Hash);
+            $unique2        = $this->rabinkarp->unique($fingerprint2);
+            $hasiluniq2     = $this->rabinkarp->fingerprint($unique2, $teks1Hash);
+            $similarity2    = $this->rabinkarp->similarityCoefficient(
                 $hasiluniq2,
                 $teks1Hash,
                 $teks3Hash
