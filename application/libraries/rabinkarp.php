@@ -57,7 +57,6 @@ class Rabinkarp
                 $hashGram[] = $this->rollingHash($teks);
             }
         }
-        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         return $hashGram;
     }
 
@@ -74,7 +73,6 @@ class Rabinkarp
                 }
             }
         }
-        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         return $value;
     }
 
@@ -87,8 +85,11 @@ class Rabinkarp
             $ascii = floatval(ord($string[$i]));
             $x     = floatval(pow($basis, $pjgKarakter - ($i + 1)));
             $hash += $ascii * $x;
+            var_dump($ascii);
+            var_dump($x);
+            var_dump($hash);
         }
-        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+
         return $hash;
     }
 
@@ -117,7 +118,6 @@ class Rabinkarp
                 $hashUdahDicek[] = $hash1[$i];
             }
         }
-        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         return $fingerprint;
     }
 
@@ -129,7 +129,6 @@ class Rabinkarp
         foreach ($clear as $row) {
             $hasilunique[] = $row;
         }
-        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         return $hasilunique;
     }
 
@@ -140,7 +139,6 @@ class Rabinkarp
         // echo count($hash1);
         // echo "<br>";
         // echo count($hash2);
-
         $similarity = number_format(((2 * count($hasilunique) / (count($hash1) + count($hash2))) * 100), 2, '.', '');
 
         if ($similarity > 100) {
@@ -148,7 +146,6 @@ class Rabinkarp
         } else {
             $output = $similarity;
         }
-        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         return $output;
     }
 }
