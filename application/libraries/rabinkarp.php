@@ -83,7 +83,7 @@ class Rabinkarp
         $hash = 0;
         for ($i = 0; $i < $pjgKarakter; $i++) {
             $ascii = ord($string[$i]) . "<br>";
-            $hash += floatval($ascii * pow($basis, $pjgKarakter - ($i + 1)));
+            $hash += is_numeric($ascii * pow($basis, $pjgKarakter - ($i + 1)));
         }
         return number_format($hash);
     }
