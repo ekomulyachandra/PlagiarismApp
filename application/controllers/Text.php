@@ -59,14 +59,14 @@ class Text extends CI_Controller
             $this->load->view('layout/wrapper', $data, False);
             //Jika validasi oke, maka masuk database
         } else {
-            $pre1           = $this->rabinkarp->preprocess($text1);
-            $pre2           = $this->rabinkarp->preprocess($text2);
-            $teks1Gram      = $this->rabinkarp->kGram($pre1, $kgram);
-            $teks2Gram      = $this->rabinkarp->kGram($pre2, $kgram);
-            $teks1Hash      = $this->rabinkarp->hash($teks1Gram);
-            $teks2Hash      = $this->rabinkarp->hash($teks2Gram);
-            $fingerprint    = $this->rabinkarp->fingerprint($teks1Hash, $teks2Hash);
-            $similarity     = $this->rabinkarp->similarityCoefficient(
+            $pre1           = $this->Rabinkarp->preprocess($text1);
+            $pre2           = $this->Rabinkarp->preprocess($text2);
+            $teks1Gram      = $this->Rabinkarp->kGram($pre1, $kgram);
+            $teks2Gram      = $this->Rabinkarp->kGram($pre2, $kgram);
+            $teks1Hash      = $this->Rabinkarp->hash($teks1Gram);
+            $teks2Hash      = $this->Rabinkarp->hash($teks2Gram);
+            $fingerprint    = $this->Rabinkarp->fingerprint($teks1Hash, $teks2Hash);
+            $similarity     = $this->Rabinkarp->similarityCoefficient(
                 $fingerprint,
                 $teks1Hash,
                 $teks2Hash
