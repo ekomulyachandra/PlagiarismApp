@@ -20,8 +20,8 @@ class Dashboard extends CI_Controller
         $pre1           = $this->rabinkarp->preprocess($teks);
         $teks1Gram      = $this->rabinkarp->kGram($pre1, 2);
         $teks1Hash      = $this->rabinkarp->hash($teks1Gram);
-        $users     = $this->dashboard_model->countUser();
-        $roleID    = $this->session->userdata['role_id'];
+        $users          = $this->dashboard_model->countUser();
+        $roleID         = $this->session->userdata['role_id'];
         if ($roleID == 1) {
             $history   = $this->dashboard_model->countAllHistory();
             $journals  = $this->dashboard_model->countAllJournal();
