@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 use Sastrawi\Stemmer\StemmerFactory;
 use Sastrawi\StopWordRemover\StopWordRemoverFactory;
 
-class rabinkarp
+class Rabinkarp
 {
     protected $CI;
 
