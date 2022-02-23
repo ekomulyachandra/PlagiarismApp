@@ -1,4 +1,4 @@
-<form action="<?= base_url('plagiarism_journal/process') ?>" method="POST" enctype="multipart/form-data">
+<form action="<?= base_url('plagiarismjournal/process') ?>" method="POST" enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-4">
             <div class="form-group">
