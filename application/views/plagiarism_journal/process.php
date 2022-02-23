@@ -322,6 +322,6 @@ if ($similarity >= 0 && $similarity <= 25) {
     </div>
     <br>
     <div class="col-sm-12">
-        <a class="btn btn-secondary col-12" href="<?= base_url('plagiarismjournal') ?>"><i class="fa fa-backward"></i> Back </a>
+        <a class="btn btn-secondary col-12" href="<?= base_url('plagiarism_journal') ?>"><i class="fa fa-backward"></i> Back </a>
     </div>
 </div>
